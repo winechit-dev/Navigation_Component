@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.navigationcomponent.FragmentOne"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_one">
+        <action
+            android:id="@+id/action_fragment_one_to_fragment_two"
+            app:destination="@id/secondFragment"
+            app:enterAnim="@anim/slide_out_left"/>
+        <action
+            android:id="@+id/action_fragment_one_to_item_fragment"
+            app:destination="@id/itemFragment"
+            app:enterAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.navigationcomponent.FragmentTwo"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_two">
+        <action
+            android:id="@+id/action_fragment_two_to_fragment_three"
+            app:destination="@id/thirdFragment"
+            app:enterAnim="@anim/slide_out_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.navigationcomponent.FragmentThree"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_three">
+        <action
+            android:id="@+id/action_fragment_three_to_fragment_one"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/slide_out_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/itemFragment"
+        android:name="com.example.navigationcomponent.ItemFragment"
+        android:label="Item Fragment"
+        tools:layout="@layout/fragment_item_list">
+        <action
+            android:id="@+id/action_item_fragment_to_fragment_one"
+            app:destination="@id/firstFragment"
+            app:enterAnim="@anim/slide_out_right"/>
+    </fragment>
+
+</navigation>
